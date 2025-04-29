@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Social Media Links</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-attachment: fixed;
+            color: white;
+        }
+        
+        .container {
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        h1 {
+            color: white;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            font-size: 28px;
+        }
+        
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+        }
+        
+        .social-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            width: 100%;
+            border: none;
+        }
+        
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .social-link:hover::before {
+            left: 100%;
+        }
+        
+        .social-link:active {
+            transform: scale(0.95);
+        }
+        
+        .social-link i {
+            margin-left: 12px;
+            font-size: 28px;
+        }
+        
+        .snapchat {
+            background: linear-gradient(45deg, #FFFC00, #FFD700);
+            color: #000;
+        }
+        
+        .facebook {
+            background: linear-gradient(45deg, #1877F2, #0A5AC2);
+        }
+        
+        .tiktok {
+            background: linear-gradient(45deg, #000000, #333333);
+        }
+        
+        .instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+        }
+        
+        .whatsapp {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+        }
+        
+        .viber {
+            background: linear-gradient(45deg, #7360F2, #5D4AE0);
+        }
+        
+        .phone-number {
+            display: none;
+            margin-top: 10px;
+            font-size: 16px;
+            color: white;
+            background: rgba(0,0,0,0.3);
+            padding: 10px 15px;
+            border-radius: 20px;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        .copy-btn {
+            margin-top: 5px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 12px;
+            display: none;
+        }
+        
+        .copy-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+
+to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .footer {
+            margin-top: 40px;
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>My Social Media Links</h1>
+        
+        <div class="social-links">
+            <a href="https://snapchat.com/t/1YHxjBu2" class="social-link snapchat" target="_blank">
+                Snapchat
+                <i class="fab fa-snapchat-ghost"></i>
+            </a>
+            
+            <a href="https://www.facebook.com/haloy.mhamad" class="social-link facebook" target="_blank">
+                Facebook
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            
+            <a href="https://www.tiktok.com/@h4lloo.1?_t=ZS-8vJf6kblwCV&_r=1" class="social-link tiktok" target="_blank">
+                TikTok
+                <i class="fab fa-tiktok"></i>
+            </a>
+            
+            <a href="https://www.instagram.com/h4llo.01?igsh=MW5sb2loNWcxYnN5YQ%3D%3D&utm_source=qr" class="social-link instagram" target="_blank">
+                Instagram
+                <i class="fab fa-instagram"></i>
+            </a>
+            
+            <div class="social-btn">
+                <button class="social-link whatsapp" onclick="showPhone('whatsapp')">
+                    WhatsApp
+                    <i class="fab fa-whatsapp"></i>
+                </button>
+                <div id="whatsapp-phone" class="phone-number"></div>
+                <button id="whatsapp-copy" class="copy-btn" onclick="copyPhone('whatsapp')">Copy Number</button>
+            </div>
+            
+            <div class="social-btn">
+                <button class="social-link viber" onclick="showPhone('viber')">
+                    Viber
+                    <i class="fab fa-viber"></i>
+                </button>
+                <div id="viber-phone" class="phone-number"></div>
+                <button id="viber-copy" class="copy-btn" onclick="copyPhone('viber')">Copy Number</button>
+            </div>
+        </div>
+        
+        <div class="footer">
+            Click to visit my profiles
+        </div>
+    </div>
+
+    <script>
+        // Replace with your actual phone number (with country code)
+        const myPhoneNumber = '07506720021'; // Example format
+        
+        function showPhone(app) {
+            const phoneElement = document.getElementById(app + '-phone');
+            const copyBtn = document.getElementById(app + '-copy');
+            
+            if (phoneElement.style.display === 'block') {
+                phoneElement.style.display = 'none';
+                copyBtn.style.display = 'none';
+            } else {
+                // Display phone number
+                phoneElement.textContent = myPhoneNumber;
+                phoneElement.style.display = 'block';
+                copyBtn.style.display = 'block';
+            }
+        }
+        
+        function copyPhone(app) {
+            const phoneNumber = myPhoneNumber;
+            navigator.clipboard.writeText(phoneNumber.replace(/\D/g, ''));
+            
+            const copyBtn = document.getElementById(app + '-copy');
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = 'Copied!';
+            
+            setTimeout(() => {
+                copyBtn.textContent = originalText;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
